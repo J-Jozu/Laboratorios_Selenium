@@ -20,10 +20,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Ejecutar pruebas en modo Headless
+      - name: Ejecutar pruebas (modo debug)
         run: |
-          pytest tu-proyecto/Lab2 --html=reporte_final.html --self-contained-html || true
+          echo "=== UBICACION ACTUAL ==="
+          pwd
 
+          echo "=== ARCHIVOS ==="
+          ls -R
+
+          echo "=== EJECUTANDO PYTEST ==="
+          python -m pytest tu-proyecto/Lab2 --html=reporte_final.html --self-contained-html || true
+
+          echo "=== DESPUES DE PYTEST ==="
+          ls -la
+          
       - name: Ver archivos generados
         run: |
           echo "Contenido del directorio:"
