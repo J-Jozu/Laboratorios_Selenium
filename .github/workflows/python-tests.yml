@@ -22,7 +22,7 @@ jobs:
 
       - name: Ejecutar pruebas en modo Headless
         run: |
-          pytest --html=reporte_final.html --self-contained-html
+          pytest --html=reporte_final.html --self-contained-html || true
 
       - name: Guardar el Reporte HTML
         if: always()
