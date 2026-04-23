@@ -22,7 +22,12 @@ jobs:
 
       - name: Ejecutar pruebas en modo Headless
         run: |
-          pytest --html=reporte_final.html --self-contained-html || true
+          pytest tu-proyecto/Lab2 --html=reporte_final.html --self-contained-html || true
+
+      - name: Ver archivos generados
+        run: |
+          echo "Contenido del directorio:"
+          ls -la
 
       - name: Guardar el Reporte HTML
         if: always()
